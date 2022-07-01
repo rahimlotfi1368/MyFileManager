@@ -1,0 +1,42 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = DataDictionary.LoginPage;
+    Layout = "_Layout";
+}
+<div class="row d-flex justify-content-center my-5">
+    <div class=" col-sm-12  col-lg-8">
+          <div class="card text-center shadow-lg">
+              <div class="card-header">
+               @(DataDictionary.LoginPage)
+              </div>
+              <div class="card-body">
+                   <form asp-controller="Admin" asp-action="Login" method="post">
+                       <div class="mb-3">
+						    <div class="input-group">
+							    <input asp-for="UserName" class="form-control" placeholder="@(DataDictionary.UserName)" />
+						    </div>
+						    <span asp-validation-for="UserName" class="text-danger"></span>
+					    </div>
+                        <div class="mb-3">
+						    <div class="input-group">
+							    <input asp-for="Password" class="form-control" placeholder="@(DataDictionary.Password)" />
+						    </div>
+						    <span asp-validation-for="Password" class="text-danger"></span>
+					    </div>
+                        <div class="mb-3 text-right">
+						    <div class="form-check">
+							    <input asp-for="RememberMe" class="form-check-input " />
+							    <label asp-for="RememberMe" class="form-check-label px-3">@(DataDictionary.RememberMe)</label>
+						    </div>
+					    </div>
+                        <div class="mb-3">
+							<button type="submit" class="btn btn-primary">@(ButtonCaptions.loginBtn)</button>
+							<button type="reset" class="btn btn-secondary">@(ButtonCaptions.ResetBtn)</button>
+						</div>
+                   </form>
+              </div>
+           </div>
+    </div>
+</div>
+
+

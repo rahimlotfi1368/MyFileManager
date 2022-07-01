@@ -1,0 +1,44 @@
+﻿@model AddBrandViewModel
+@{
+    ViewData["Title"] = DataDictionary.AddNewBrand;
+}
+
+<div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-6 ">
+        <div class="card text-right">
+          <div class="card-header text-center">
+            @(DataDictionary.AddNewBrand)
+          </div>
+          <div class="card-body">
+             <form method="post" asp-controller="Admin" asp-action="AddNewBrand" enctype="multipart/form-data">
+               <div class="form-row">
+                 <div class="col">
+                   <label asp-for="BrandName"></label>
+                   <input asp-for="BrandName" class="form-control" >
+                   <span asp-validation-for="BrandName" class="text-danger"></span>
+                 </div>
+               </div>
+               <div class="form-row my-3">
+                  <div class="col">
+                    <label asp-for="BrandLogo"></label>
+                    <input asp-for="BrandLogo" class="form-control-file" id="BrandLogo">
+                    <span asp-validation-for="BrandLogo" class="text-danger"></span>
+                  </div>
+               </div>
+               <div class="form-row">
+                  <div class="col">
+                    <label asp-for="BrandKatalog"></label>
+                    <input asp-for="BrandKatalog" class="form-control-file" id="BrandKatalog">
+                    <span asp-validation-for="BrandKatalog" class="text-danger"></span>
+                  </div>
+               </div>
+               <div class="form-row mt-3 d-flex justify-content-center">
+                	<button type="submit" class="btn btn-primary">@(ButtonCaptions.SubmitBtn)</button>
+					<button type="reset" class="btn btn-secondary mx-2">@(ButtonCaptions.ResetBtn)</button>
+               </div>
+             </form>
+          </div>
+        </div>
+    </div>
+</div>
+
