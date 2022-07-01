@@ -39,7 +39,7 @@ namespace MaadiranChainStorePrices.Controllers
                     }
                     else
                     {
-                        return RedirectToAction(nameof(AdminPanel));
+                         return RedirectToAction(nameof(AdminPanel));
                     }
                 }
 
